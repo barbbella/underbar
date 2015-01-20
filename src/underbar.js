@@ -97,10 +97,39 @@
   _.reject = function(collection, test) {
     // TIP: see if you can re-use _.filter() here, without simply
     // copying code in and modifying it
+
+	var rejects = [];
+
+	_.each(collection, function(item) {
+		if (test(item) != true) {
+			rejects.push(item);
+		}
+	});
+
+	return rejects; 
   };
 
   // Produce a duplicate-free version of the array.
   _.uniq = function(array) {
+	
+	var uniqs = [];	
+
+	_.each(array, function(firstItem, firstIndex, firstEachArray) {
+		var count = 0; 		
+		
+		_.each(firstEachArray, function(secondItem) {
+			if (firstItem === secondItem) {
+				count++;
+			}
+		});
+		
+		if (count === 1) {
+			uniqs.push(item); 
+		}
+		alert(uniqs);
+	});
+
+	return uniqs;
   };
 
 
