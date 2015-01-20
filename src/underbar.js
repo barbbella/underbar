@@ -129,13 +129,22 @@
 		}
 		
 	});
-	console.log("Result " + uniqs);
+
 	return uniqs;
   };
 
 
   // Return the results of applying an iterator to each element.
   _.map = function(collection, iterator) {
+
+	var mapped = [];
+	
+	for (var i = 0; i < collection.length; i++) {
+		mapped.push(iterator(collection[i]));
+		
+	};
+
+	return mapped;
     // map() is a useful primitive iteration function that works a lot
     // like each(), but in addition to running the operation on all
     // the members, it also maintains an array of results.
@@ -180,7 +189,22 @@
   //   }); // should be 5, regardless of the iterator function passed in
   //          No accumulator is given so the first element is used.
   _.reduce = function(collection, iterator, accumulator) {
-  };
+
+	if (accumulator === undefined) {
+		accumulator = collection[0];
+
+		for (var o = 1; o < collection.length; o++) {
+			accumulator = iterator(accumulator, collection[o]);
+		}
+	} else {
+		for (var u = 0; u < collection.length; u++) {
+			accumulator = iterator(accumulator, collection[u]);
+		}
+	}
+	
+	console.log("finished " + accumulator);
+	return accumulator; 
+ };
 
   // Determine if the array or object contains a given value (using `===`).
   _.contains = function(collection, target) {
