@@ -113,22 +113,23 @@
   _.uniq = function(array) {
 	
 	var uniqs = [];	
+	uniqs[0] = array[0];
 
 	_.each(array, function(firstItem, firstIndex, firstEachArray) {
-		var count = 0; 		
 		
-		_.each(firstEachArray, function(secondItem) {
-			if (firstItem === secondItem) {
+		var count = 0; 
+
+		_.each(uniqs, function(secItem, secIndex, secArray) {
+			if (firstItem === secItem) {
 				count++;
 			}
-		});
-		
-		if (count === 1) {
-			uniqs.push(item); 
+		});	
+		if (count < 1) {
+			uniqs.push(firstItem);
 		}
-		alert(uniqs);
+		
 	});
-
+	console.log("Result " + uniqs);
 	return uniqs;
   };
 
