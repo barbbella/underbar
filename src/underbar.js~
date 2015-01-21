@@ -230,12 +230,14 @@
   // Determine whether all of the elements match a truth test.
   _.every = function(collection, iterator) {
 	var retval = true;
-	_.each(collection,function(item) {
+
+	for (var item in collection) {
 		if (iterator) {
-			if (!iterator(item)) retval = false;
+			if (!iterator(collection[item])) retval = false;
 		} else
-			if (!item) retval = false;
-	});
+			if (!collection[item]) retval = false;
+	}
+	
 	return retval;
   };
 
