@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e0b3ccd-7fb7-4db7-8ecd-1d725ec227d4" name="Default" comment="Shuffle completed">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SpecRunner.html" afterPath="$PROJECT_DIR$/SpecRunner.html" />
-    </list>
-    <list id="ad832c96-cb4e-4822-9941-69a83c69062b" name="Rejected commit: Default" comment="Shuffle completed">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/underbar.js" afterPath="$PROJECT_DIR$/src/underbar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
+    <list id="ad832c96-cb4e-4822-9941-69a83c69062b" name="Rejected commit: Default" comment="Shuffle completed" />
     <ignored path="2015-02-underbar.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,8 +31,8 @@
       <file leaf-file-name="underbar.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/underbar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.75317603" vertical-offset="6767" max-vertical-offset="8298">
-              <caret line="399" column="4" selection-start-line="399" selection-start-column="4" selection-end-line="399" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.42105263" vertical-offset="6458" max-vertical-offset="8892">
+              <caret line="373" column="39" selection-start-line="373" selection-start-column="39" selection-end-line="373" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -56,9 +55,9 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="635" />
+    <option name="x" value="708" />
     <option name="y" value="52" />
-    <option name="width" value="730" />
+    <option name="width" value="657" />
     <option name="height" value="716" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -226,7 +225,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="635" y="52" width="730" height="716" extended-state="4" />
+    <frame x="708" y="52" width="657" height="716" extended-state="4" />
     <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -299,8 +298,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/underbar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75317603" vertical-offset="6767" max-vertical-offset="8298">
-          <caret line="399" column="4" selection-start-line="399" selection-start-column="4" selection-end-line="399" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.42105263" vertical-offset="6458" max-vertical-offset="8892">
+          <caret line="373" column="39" selection-start-line="373" selection-start-column="39" selection-end-line="373" selection-end-column="39" />
           <folding />
         </state>
       </provider>

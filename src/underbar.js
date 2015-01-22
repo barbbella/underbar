@@ -344,17 +344,40 @@
   // _.memoize should return a function that, when called, will check if it has
   // already computed the result for the given argument and return that value
   // instead if possible.
-  _.memoize = function(func) {
-    var alreadyCalled = false;
-    var result;
+    _.arrayContains = function(haystack,needle) {
 
-    return function() {
-      if (!alreadyCalled) {
-        result = func.apply(this, arguments);
-        alreadyCalled = true;
-      }
-      return result;
-    };
+        var needle_string = needle.toString();
+
+        for (var i=0;i<haystack.length;i++) {
+            var straw = haystack[i].toString();
+
+            if (needle_string == straw)
+                return true;
+        }
+
+        return false;
+    }
+
+  _.memoize = function(func) {
+      //console.log("Func: " + func);
+      var alreadyCalled = [];
+      var result = [];
+      var i = 0;
+
+      return function() {
+
+          var args = [].slice.call(arguments);
+          console.log(args);
+
+          if (!_.arrayContains(alreadyCalled,args)) {
+              result[args] = func.apply(this, arguments);
+              alreadyCalled.push(args);
+          }
+          i++;
+          console.log("Times this has run: "+i);
+          console.log("Result: " + result[args]);
+          return result[args];
+      };
   };
 
   // Delays a function for the given number of milliseconds, and then calls
@@ -364,6 +387,16 @@
   // parameter. For example _.delay(someFunction, 500, 'a', 'b') will
   // call someFunction('a', 'b') after 500ms
   _.delay = function(func, wait) {
+      var argList = [];
+      var result;
+
+      for (var i = 2; i < arguments.length; i++) {
+          argList.push(arguments[i]);
+      }
+
+      setTimeout(function(){
+          func.apply(this,argList);
+      },wait);
   };
 
 
