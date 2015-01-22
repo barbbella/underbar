@@ -250,7 +250,6 @@
 		} else
 			if (item) retval = true;
 	});
-
 	return retval;
   };
 
@@ -274,6 +273,18 @@
   //     bla: "even more stuff"
   //   }); // obj1 now contains key1, key2, key3 and bla
   _.extend = function(obj) {
+	var destObj = obj;
+	console.log("OBJ: " + obj);
+	for (var i = 0; i<arguments.length; i++) {
+		console.log("i: " + i);
+		for (var key in arguments[i]) {
+			destObj[key] = arguments[i][key];
+			console.log("ARG: " + arguments[i][key]);
+		}
+	
+	} //closes first for loop
+	console.log(destObj);
+	return destObj;
   };
 
   // Like extend, but doesn't ever overwrite a key that already
