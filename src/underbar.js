@@ -243,6 +243,8 @@
   // provided, provide a default one
   _.some = function(collection, iterator) {
     // TIP: There's a very clever way to re-use every() here.
+
+
 	var retval = false;
 	_.each(collection,function(item) {
 		if (iterator) {
@@ -250,6 +252,8 @@
 		} else
 			if (item) retval = true;
 	});
+
+
 	return retval;
   };
 
@@ -288,6 +292,16 @@
   // Like extend, but doesn't ever overwrite a key that already
   // exists in obj
   _.defaults = function(obj) {
+	var destObj = obj;
+
+	for (var i = 0; i<arguments.length; i++) {
+		for (var key in arguments[i]) {
+			if (destObj[key] === undefined)			
+				destObj[key] = arguments[i][key];
+		}
+	
+	} 
+	return destObj;
   };
 
 
@@ -331,6 +345,16 @@
   // already computed the result for the given argument and return that value
   // instead if possible.
   _.memoize = function(func) {
+    var alreadyCalled = false;
+    var result;
+
+    return function() {
+      if (!alreadyCalled) {
+        result = func.apply(this, arguments);
+        alreadyCalled = true;
+      }
+      return result;
+    };
   };
 
   // Delays a function for the given number of milliseconds, and then calls
@@ -354,6 +378,25 @@
   // input array. For a tip on how to make a copy of an array, see:
   // http://mdn.io/Array.prototype.slice
   _.shuffle = function(array) {
+
+      var count = array.length;
+      var shuffle = [];
+
+      var newKey = function() {
+          var rando = Math.floor(Math.random() * count);
+          return rando;
+      }
+
+      var key = newKey();
+
+      for (var i = 0; i < count; i ++) {
+          while (shuffle[key] != undefined) {
+              key = newKey();
+          }
+          shuffle[key] = array[i];
+      }
+      return shuffle;
+
   };
 
 
