@@ -230,14 +230,12 @@
   // Determine whether all of the elements match a truth test.
   _.every = function(collection, iterator) {
 	var retval = true;
-
-	for (var item in collection) {
+	_.each(collection,function(item) {
 		if (iterator) {
-			if (!iterator(collection[item])) retval = false;
+			if (!iterator(item)) retval = false;
 		} else
-			if (!collection[item]) retval = false;
-	}
-	
+			if (!item) retval = false;
+	});
 	return retval;
   };
 
@@ -245,6 +243,15 @@
   // provided, provide a default one
   _.some = function(collection, iterator) {
     // TIP: There's a very clever way to re-use every() here.
+	var retval = false;
+	_.each(collection,function(item) {
+		if (iterator) {
+			if (iterator(item)) retval = true; 
+		} else
+			if (item) retval = true;
+	});
+
+	return retval;
   };
 
 

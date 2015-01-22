@@ -243,6 +243,14 @@
   // provided, provide a default one
   _.some = function(collection, iterator) {
     // TIP: There's a very clever way to re-use every() here.
+	var retval = false;
+	_.each(collection,function(item) {
+		if (iterator) {
+			if (iterator(item)) retval = true; 
+		} else
+			if (item) retval = true;
+	});
+	return retval;
   };
 
 
